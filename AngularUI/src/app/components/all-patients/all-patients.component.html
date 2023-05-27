@@ -1,18 +1,22 @@
-<p>all-doctors works!</p>
+<p>all-patients works!</p>
 <table class="table table-striped">
   <thead>
     <tr>
       <th scope="col">#</th>
       <th scope="col">Name</th>
       <th scope="col">Lastname</th>
+      <th scope="col">Date of Birth</th>
+      <th scope="col">City</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let doctor of allDoctors; index as i">
+    <tr *ngFor="let patient of allPatients; index as i">
       <th scope="row">{{ i + 1 }}</th>
       <!-- <td><a href="/house/1"></a>{{ house.number | number }}</td> -->
-      <td>{{ doctor.name }}</td>
-      <td>{{ doctor.lastName }}</td>
+      <td>{{ patient.name }}</td>
+      <td>{{ patient.lastName }}</td>
+      <td>{{ patient.dateOfBirth }}</td>
+      <td>{{ patient.city }}</td>
 
       <!-- <td><button [routerLink]="['/house',house.id]">Go to home {{house.id}}</button></td> -->
     </tr>

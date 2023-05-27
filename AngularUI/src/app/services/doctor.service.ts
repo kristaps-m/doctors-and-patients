@@ -10,9 +10,7 @@ export class DoctorService {
   constructor(private http: HttpClient) {}
 
   public getAllDoctors(): Observable<IDoctor[]> {
-    let x = this.http.get<IDoctor[]>(`https://localhost:4444/api/Doctor/all`);
-    console.log(x);
-    return x;
-    // return this.http.get<IDoctor[]>(`https://localhost:4444/api/Doctor/all`);
+
+    return this.http.get<IDoctor[]>(`https://localhost:4444/api/Doctor/all`);
   }
 }
