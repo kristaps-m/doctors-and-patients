@@ -1,6 +1,6 @@
 ﻿using doctors_and_patients.Core;
 
-namespace doctors_and_patients.Services
+namespace doctors_and_patients.Services.Interfaces
 {
     public interface IDoctorService : IEntityService<Doctor>
     {

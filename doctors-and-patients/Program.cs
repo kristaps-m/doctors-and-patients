@@ -1,6 +1,7 @@
 using doctors_and_patients.Core;
 using doctors_and_patients.Data;
 using doctors_and_patients.Services;
+using doctors_and_patients.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,6 +21,8 @@ builder.Services.AddScoped<IEntityService<Doctor>, EntityService<Doctor>>();
 builder.Services.AddScoped<IEntityService<Patient>, EntityService<Patient>>();
 builder.Services.AddScoped<IEntityService<DoctorPatient>, EntityService<DoctorPatient>>();
 builder.Services.AddScoped<IDoctorService, DoctorService>();
+builder.Services.AddScoped<IPatientService, PatientService>();
+builder.Services.AddScoped<IDoctorPatientService, DoctorPatientService>();
 
 var app = builder.Build();
 

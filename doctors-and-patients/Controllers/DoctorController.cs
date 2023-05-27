@@ -1,5 +1,5 @@
 ﻿using doctors_and_patients.Core;
-using doctors_and_patients.Services;
+using doctors_and_patients.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace doctors_and_patients.Controllers
@@ -20,7 +20,8 @@ namespace doctors_and_patients.Controllers
 		public IActionResult AddDoctor(Doctor doctor)
 		{
 			_doctorService.Create(doctor);
-			return Created("", doctor); // Ok();
+
+			return Created("", doctor);
 		}
 
 		[Route("update")]
@@ -32,7 +33,7 @@ namespace doctors_and_patients.Controllers
 			doctorToUpdate.LastName = doctor.LastName;
 			_doctorService.Update(doctorToUpdate);
 
-			return Created("", doctorToUpdate); // Ok();
+			return Created("", doctorToUpdate);
 		}
 
 		[Route("delete/{id}")]
