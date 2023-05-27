@@ -1,0 +1,43 @@
+<p>edit-patient works!</p>
+<div *ngIf="patient">
+  <!-- <h2>{{house.id}}</h2> -->
+  <!-- <h2>{{patient.number}}</h2> -->
+  <div>
+    Name:
+    <input [(ngModel)]="patient.name" placeholder="Name" />
+  </div>
+  <div>
+    Last Name:
+    <input [(ngModel)]="patient.lastName" placeholder="Last Name" />
+  </div>
+  <div>
+    Date of Birth:
+    <input [(ngModel)]="patient.dateOfBirth" placeholder="Date of Birth" />
+  </div>
+  <div>
+    City:
+    <input [(ngModel)]="patient.city" placeholder="City" />
+  </div>
+  <br>
+  <button type="button" class="btn btn-outline-success" (click)="createPatient(patient)" *ngIf="!patient.id">Create</button>
+
+  <!-- <span style="display: flex; justify-content: space-between">
+    <button type="button" class="btn btn-primary" (click)="updateHouse(house)" *ngIf="house.id">Save changes</button>
+    <button type="button" class="btn btn-outline-success" (click)="createHouse(house)" *ngIf="!house.id">Create</button>
+    <dialog #deleteButton>
+      <div>
+        Are you sure you want to delete house {{house.id}}
+      </div>
+      <span style="display: flex; justify-content: space-between">
+        <button (click)="deleteButton.close()" class="btn btn-success">
+          CANCEL
+        </button>
+        <button (click)="deleteHouse(house)" *ngIf="house.id" (click)="deleteButton.close()"
+          class="btn btn-danger">Delete</button>
+      </span>
+
+    </dialog>
+    <button (click)="deleteButton.show()" class="btn btn-warning" *ngIf="house.id">Del House</button>
+  </span> -->
+
+</div>
