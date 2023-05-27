@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>doctors_and_patients.Services</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\doctors-and-patients.Core\doctors-and-patients.Core.csproj" />
+    <ProjectReference Include="..\doctors-and-patients.Data\doctors-and-patients.Data.csproj" />
+  </ItemGroup>
+
+</Project>
