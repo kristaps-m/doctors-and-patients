@@ -19,6 +19,7 @@ builder.Services.AddScoped<IDbService, DbService>();
 builder.Services.AddScoped<IEntityService<Doctor>, EntityService<Doctor>>();
 builder.Services.AddScoped<IEntityService<Patient>, EntityService<Patient>>();
 builder.Services.AddScoped<IEntityService<DoctorPatient>, EntityService<DoctorPatient>>();
+builder.Services.AddScoped<IDoctorService, DoctorService>();
 
 var app = builder.Build();
 
