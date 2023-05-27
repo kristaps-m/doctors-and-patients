@@ -8,13 +8,13 @@ import { IPatient, Patient } from './models/Patient';
 })
 export class AppComponent {
   title = 'AngularUI';
-  patientToEdit?: IPatient;
+  // patientToEdit?: IPatient;
 
-  initNewPatien() {
-    this.patientToEdit = new Patient();
-  }
+  // initNewPatien() {
+  //   this.patientToEdit = new Patient();
+  // }
 
-  updateOneHouse(h: IPatient) {
-    this.patientToEdit = h;
-  }
+  // updateOneHouse(h: IPatient) {
+  //   this.patientToEdit = h;
+  // }
 }

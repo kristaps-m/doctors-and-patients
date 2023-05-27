@@ -5,6 +5,7 @@
       <th scope="col">#</th>
       <th scope="col">Name</th>
       <th scope="col">Lastname</th>
+      <th scope="col">Login as Doctor</th>
     </tr>
   </thead>
   <tbody>
@@ -13,7 +14,7 @@
       <!-- <td><a href="/house/1"></a>{{ house.number | number }}</td> -->
       <td>{{ doctor.name }}</td>
       <td>{{ doctor.lastName }}</td>
-
+      <td><button [routerLink]="['/doctor',doctor.id]">{{doctor.name}}</button></td>
       <!-- <td><button [routerLink]="['/house',house.id]">Go to home {{house.id}}</button></td> -->
     </tr>
     <!-- Show loading spinner if isLoading is true -->

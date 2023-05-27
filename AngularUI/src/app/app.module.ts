@@ -8,6 +8,8 @@ import { AllDoctorsComponent } from './components/all-doctors/all-doctors.compon
 import { AllPatientsComponent } from './components/all-patients/all-patients.component';
 import { EditPatientComponent } from './components/edit-patient/edit-patient.component';
 import { FormsModule } from '@angular/forms';
+import { DoctorComponent } from './components/doctor/doctor.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,8 @@ import { FormsModule } from '@angular/forms';
     AllDoctorsComponent,
     AllPatientsComponent,
     EditPatientComponent,
+    DoctorComponent,
+    HomepageComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,64 @@
+<p>doctor works!</p>
+<table class="table table-striped" *ngIf="oneDoctor | async as doctor">
+  <thead>
+    <tr>
+      <th scope="col">THE DOCTOR</th>
+      <th scope="col">EDIT</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <div class="card mb-3" style="max-width: 540px;">
+          <style>
+            hr.rounded {
+              border-top: 8px solid #918a8a;
+              border-radius: 5px;
+            }
+          </style>
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img
+                src="https://fastly.picsum.photos/id/78/1584/2376.jpg?hmac=80UVSwpa9Nfcq7sQ5kxb9Z5sD2oLsbd5zkFO5ybMC4E"
+                class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <p class="card-text">Name:</p>
+                <h5 class="card-title">{{doctor.name}}</h5>
+                <hr class="rounded">
+                <p class="card-text">Last Name:</p>
+                <h5 class="card-title">{{doctor.lastName}}</h5>
+                <hr class="dotted">
+                <!-- <p class="card-text">Street:</p>
+                <h5 class="card-title">{{house.street}}</h5>
+                <hr class="dotted">
+                <p class="card-text">City:</p>
+                <h5 class="card-title">{{house.city}}</h5>
+                <hr class="dotted">
+                <p class="card-text">Country:</p>
+                <h5 class="card-title">{{house.country}}</h5>
+                <hr class="dotted">
+                <p class="card-text">Postcode:</p>
+                <h5 class="card-title">{{house.postcode}}</h5>
+                <hr class="rounded"> -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </td>
+      <h1>hello :0</h1>
+      <!-- <td>Click 'Edit House' to edit House <b>{{house.id}}</b>
+        <br>
+        <button *ngIf="!showMeEdit" (click)="editHouse(house)" (click)="toggleShowMeEdit()" type="button"
+          class="btn btn-primary">'Edit House'</button>
+        <button *ngIf="showMeEdit" (click)="toggleShowMeEdit()" type="button" class="btn btn-success">Cancel
+          'Edit'</button>
+        <app-edit-house [house]="houseToEdit" (homeUpdated)="updateOneHouse($event)"
+          *ngIf="showMeEdit"></app-edit-house>
+      </td> -->
+    </tr>
+  </tbody>
+</table>
