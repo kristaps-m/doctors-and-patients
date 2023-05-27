@@ -1,0 +1,26 @@
+<p>all-doctors works!</p>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Lastname</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let house of allDoctors; index as i">
+      <th scope="row">{{ i + 1 }}</th>
+      <!-- <td><a href="/house/1"></a>{{ house.number | number }}</td> -->
+      <td>{{ house.name }}</td>
+      <td>{{ house.lastName }}</td>
+
+      <!-- <td><button [routerLink]="['/house',house.id]">Go to home {{house.id}}</button></td> -->
+    </tr>
+    <!-- Show loading spinner if isLoading is true -->
+    <!-- <tr *ngIf="isLoading"> 
+      <td colspan="7" class="text-center">
+        <div class="spinner-border text-warning" style="width: 5rem; height: 5rem;" role="status"></div>
+      </td>
+    </tr> -->
+  </tbody>
+</table>
