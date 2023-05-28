@@ -9,13 +9,15 @@ namespace doctors_and_patients.Controllers
     public class PatientController : ControllerBase
     {
 		private readonly IPatientService _patientService;
+		private readonly IDoctorPatientService _doctorPatientService;
 
-		public PatientController(IPatientService patientService)
-		{
-			_patientService = patientService;
-		}
+		public PatientController(IPatientService patientService, IDoctorPatientService doctorPatientService)
+        {
+            _patientService = patientService;
+            _doctorPatientService = doctorPatientService;
+        }
 
-		[Route("add")]
+        [Route("add")]
 		[HttpPost]
 		public IActionResult AddPatient(Patient patient)
 		{
@@ -23,6 +25,20 @@ namespace doctors_and_patients.Controllers
 
 			return Created("", patient); 
 		}
+
+		[Route("x/{doctorId}")]
+		[HttpPost]
+		public IActionResult AddPatientAndDoctorPatient(Patient patient, int doctorId)
+		{
+			_patientService.Create(patient);
+			var doctorPatient = new DoctorPatient();
+			doctorPatient.PatientId = patient.Id;
+			doctorPatient.DoctorId = doctorId;
+			_doctorPatientService.Create(doctorPatient);
+
+			return Created("", patient);
+		}
+
 
 		[Route("update")]
 		[HttpPut]

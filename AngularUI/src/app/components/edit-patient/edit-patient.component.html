@@ -19,7 +19,10 @@
     <input [(ngModel)]="patient.city" placeholder="City" />
   </div>
   <br>
-  <button type="button" class="btn btn-outline-success" (click)="createPatient(patient)" *ngIf="!patient.id">Create</button>
+  <button type="button" class="btn btn-outline-success" (click)="createPatient(patient)" *ngIf="!theDoctorId">Create</button>
+
+  <button *ngIf="theDoctorId" type="button" class="btn btn-outline-success" (click)="createPatientAndDoctorPatient(patient, theDoctorId)"
+    >Create Special *ngIf="!patient.id"</button>
 
   <!-- <span style="display: flex; justify-content: space-between">
     <button type="button" class="btn btn-primary" (click)="updateHouse(house)" *ngIf="house.id">Save changes</button>

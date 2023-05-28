@@ -30,18 +30,6 @@
                 <p class="card-text">Last Name:</p>
                 <h5 class="card-title">{{doctor.lastName}}</h5>
                 <hr class="dotted">
-                <!-- <p class="card-text">Street:</p>
-                <h5 class="card-title">{{house.street}}</h5>
-                <hr class="dotted">
-                <p class="card-text">City:</p>
-                <h5 class="card-title">{{house.city}}</h5>
-                <hr class="dotted">
-                <p class="card-text">Country:</p>
-                <h5 class="card-title">{{house.country}}</h5>
-                <hr class="dotted">
-                <p class="card-text">Postcode:</p>
-                <h5 class="card-title">{{house.postcode}}</h5>
-                <hr class="rounded"> -->
               </div>
             </div>
           </div>
@@ -60,11 +48,11 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">New House Patient Window</h1>
+              <h1 class="modal-title fs-5" id="exampleModalLabel">New Patient Window</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <app-edit-patient [patient]="patientToEdit" (patientUpdated)="updateOneHouse($event)"></app-edit-patient>
+              <app-edit-patient [patient]="patientToEdit" (patientUpdated)="updateOnePatient($event)"></app-edit-patient>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

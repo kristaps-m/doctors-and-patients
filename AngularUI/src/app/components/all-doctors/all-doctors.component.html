@@ -3,6 +3,7 @@
   <thead>
     <tr>
       <th scope="col">#</th>
+      <th scope="col">BE Id (testing)</th>
       <th scope="col">Name</th>
       <th scope="col">Lastname</th>
       <th scope="col">Login as Doctor</th>
@@ -12,6 +13,7 @@
     <tr *ngFor="let doctor of allDoctors; index as i">
       <th scope="row">{{ i + 1 }}</th>
       <!-- <td><a href="/house/1"></a>{{ house.number | number }}</td> -->
+      <td>{{ doctor.id }}</td>
       <td>{{ doctor.name }}</td>
       <td>{{ doctor.lastName }}</td>
       <td><button [routerLink]="['/doctor',doctor.id]">{{doctor.name}}</button></td>

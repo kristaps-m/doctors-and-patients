@@ -21,6 +21,15 @@ export class PatientService {
     );
   }
 
+  public createPatientAndDoctorPatient(
+    patient: IPatient, doctorId: number
+  ): Observable<IPatient> {
+    return this.http.post<IPatient>(
+      `${environment.apiUri}/api/Patient/x/${doctorId}`,
+      patient
+    );
+  }
+
   public getPatientByDoctorId(id: number): Observable<IPatient[]> {
     let x = this.http.get<IPatient[]>(
       `${environment.apiUri}/api/Patient/doctor/${id}`

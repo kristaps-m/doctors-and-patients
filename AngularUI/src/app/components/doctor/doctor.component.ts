@@ -53,7 +53,7 @@ export class DoctorComponent {
     this.patientToEdit = new Patient();
   }
 
-  updateOneHouse(h: IPatient) {
+  updateOnePatient(h: IPatient) {
     this.patientToEdit = h;
   }
 }
