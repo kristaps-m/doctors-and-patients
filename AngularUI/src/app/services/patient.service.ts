@@ -20,4 +20,12 @@ export class PatientService {
       patient
     );
   }
+
+  public getPatientByDoctorId(id: number): Observable<IPatient[]> {
+    let x = this.http.get<IPatient[]>(
+      `${environment.apiUri}/api/Patient/doctor/${id}`
+    );
+
+    return x;
+  }
 }

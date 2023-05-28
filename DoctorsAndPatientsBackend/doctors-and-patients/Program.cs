@@ -1,7 +1,7 @@
 using doctors_and_patients.Core;
+using doctors_and_patients.Core.Interfaces;
 using doctors_and_patients.Data;
 using doctors_and_patients.Services;
-using doctors_and_patients.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

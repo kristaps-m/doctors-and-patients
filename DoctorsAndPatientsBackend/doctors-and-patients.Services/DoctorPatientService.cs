@@ -1,6 +1,6 @@
 ﻿using doctors_and_patients.Core;
+using doctors_and_patients.Core.Interfaces;
 using doctors_and_patients.Data;
-using doctors_and_patients.Services.Interfaces;
 
 namespace doctors_and_patients.Services
 {

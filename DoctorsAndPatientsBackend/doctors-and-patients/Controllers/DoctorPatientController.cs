@@ -1,5 +1,5 @@
 ﻿using doctors_and_patients.Core;
-using doctors_and_patients.Services.Interfaces;
+using doctors_and_patients.Core.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace doctors_and_patients.Controllers
@@ -53,6 +53,16 @@ namespace doctors_and_patients.Controllers
 			var doctorPatients = _doctorPatientService.GetAll();
 
 			return Ok(doctorPatients);
+		}
+
+		[Route("all/{id}")]
+		[HttpGet]
+		public IActionResult GetAllDoctorPatientsByDoctorId(int id)
+		{
+			var houseApartments = _doctorPatientService.GetAll();
+			var specialHouseApartments = houseApartments.Where(x => x.DoctorId == id);
+
+			return Ok(specialHouseApartments);
 		}
 	}
 }

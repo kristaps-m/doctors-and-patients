@@ -17,7 +17,7 @@ import { HomepageComponent } from './components/homepage/homepage.component';
     AllDoctorsComponent,
     AllPatientsComponent,
     EditPatientComponent,
-    DoctorComponent,
+    DoctorComponent,    
     HomepageComponent,
   ],
   imports: [
