@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace doctors_and_patients.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/doctor")]
     [ApiController]
     public class DoctorController : ControllerBase
     {
@@ -28,10 +28,7 @@ namespace doctors_and_patients.Controllers
 		[HttpPut]
 		public IActionResult UpdateDoctor(Doctor doctor, int id)
 		{
-			var doctorToUpdate = _doctorService.GetById(id);
-			doctorToUpdate.Name = doctor.Name;
-			doctorToUpdate.LastName = doctor.LastName;
-			_doctorService.Update(doctorToUpdate);
+			var doctorToUpdate = _doctorService.UpdateOneDoctor(doctor,id);
 
 			return Created("", doctorToUpdate);
 		}
@@ -40,8 +37,7 @@ namespace doctors_and_patients.Controllers
 		[HttpDelete]
 		public IActionResult DeleteDoctor(int id)
 		{
-			var doctorToDelete = _doctorService.GetById(id);
-			_doctorService.Delete(doctorToDelete);
+			_doctorService.DeleteOneDoctor(id);
 
 			return Ok($"Doctor with id {id} was deleted!");
 		}
@@ -50,8 +46,7 @@ namespace doctors_and_patients.Controllers
         [HttpGet]
         public IActionResult GetOneDoctor(int id)
         {
-            var doctor = _doctorService.GetById(id);            
-
+            var doctor = _doctorService.GetById(id);
             if (doctor == null)
             {
                 return NotFound();

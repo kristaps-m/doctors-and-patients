@@ -4,17 +4,15 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace doctors_and_patients.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/patient")]
     [ApiController]
     public class PatientController : ControllerBase
     {
 		private readonly IPatientService _patientService;
-		private readonly IDoctorPatientService _doctorPatientService;
 
-		public PatientController(IPatientService patientService, IDoctorPatientService doctorPatientService)
+		public PatientController(IPatientService patientService)
         {
             _patientService = patientService;
-            _doctorPatientService = doctorPatientService;
         }
 
         [Route("add")]
@@ -26,17 +24,13 @@ namespace doctors_and_patients.Controllers
 			return Created("", patient); 
 		}
 
-		[Route("x/{doctorId}")]
+		[Route("add/doctorid/{doctorId}")]
 		[HttpPost]
 		public IActionResult AddPatientAndDoctorPatient(Patient patient, int doctorId)
 		{
-			_patientService.Create(patient);
-			var doctorPatient = new DoctorPatient();
-			doctorPatient.PatientId = patient.Id;
-			doctorPatient.DoctorId = doctorId;
-			_doctorPatientService.Create(doctorPatient);
+			_patientService.CreatePatientAndDoctorPatient(patient,doctorId);
 
-			return Created("", patient);
+			return Created($"Patient with doctor Id {doctorId} created!", patient);
 		}
 
 
@@ -44,12 +38,7 @@ namespace doctors_and_patients.Controllers
 		[HttpPut]
 		public IActionResult UpdatePatient(Patient patient, int id)
 		{
-			var patientToUpdate = _patientService.GetById(id);
-			patientToUpdate.Name = patient.Name;
-			patientToUpdate.LastName = patient.LastName;
-			patientToUpdate.DateOfBirth = patient.DateOfBirth;
-			patientToUpdate.City = patient.City;
-			_patientService.Update(patientToUpdate);
+			var patientToUpdate = _patientService.UpdateOnePatient(patient, id);
 
 			return Created("", patientToUpdate);
 		}
@@ -58,8 +47,7 @@ namespace doctors_and_patients.Controllers
 		[HttpDelete]
 		public IActionResult DeletePatient(int id)
 		{
-			var patientToDelete = _patientService.GetById(id);
-			_patientService.Delete(patientToDelete);
+			_patientService.DeleteOnePatient(id);
 
 			return Ok($"Patient with id {id} was deleted!");
 		}
@@ -75,7 +63,7 @@ namespace doctors_and_patients.Controllers
 
 		[Route("doctor/{id}")]
 		[HttpGet]
-		public IActionResult GetAllSpecialApartments(int id)
+		public IActionResult GetAllSpecialPatients(int id)
 		{
 			var specialPatientsByDoctorId = _patientService.GetAllSpecialPatientsByDoctorId(id);
 

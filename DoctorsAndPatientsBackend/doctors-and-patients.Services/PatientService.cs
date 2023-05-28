@@ -29,5 +29,40 @@ namespace doctors_and_patients.Services
 
             return patients.ToList();
         }
+
+        public Patient UpdateOnePatient(Patient patient, int id)
+        {
+            var patientToUpdate = _context.Patients.SingleOrDefault(p => p.Id == id);
+            if (patientToUpdate != null)
+            {
+                patientToUpdate.Name = patient.Name;
+                patientToUpdate.LastName = patient.LastName;
+                patientToUpdate.DateOfBirth = patient.DateOfBirth;
+                patientToUpdate.City = patient.City;
+                _context.Entry(patientToUpdate).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                _context.SaveChanges();
+            }
+
+            return patientToUpdate;
+        }
+
+        public void DeleteOnePatient(int id)
+        {
+            var patientToDelete = _context.Patients.SingleOrDefault(p => p.Id == id);
+            _context.Patients.Remove(patientToDelete);
+            _context.SaveChanges();
+        }
+
+        public Patient CreatePatientAndDoctorPatient(Patient patient, int doctorId)
+        {
+            _context.Patients.Add(patient);
+            _context.SaveChanges();
+            var doctorPatient = new DoctorPatient();
+            doctorPatient.PatientId = patient.Id;
+            doctorPatient.DoctorId = doctorId;
+            _doctorPatientService.Create(doctorPatient);
+
+            return patient;
+        }
     }
 }

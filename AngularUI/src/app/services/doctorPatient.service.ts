@@ -10,10 +10,10 @@ import { Observable } from 'rxjs';
 export class DoctorPatientService {
   constructor(private http: HttpClient) {}
 
-  public getSpecialDoctorPatientByDoctorId(id: number): Observable<IDoctorPatient[]> {
+  // public getSpecialDoctorPatientByDoctorId(id: number): Observable<IDoctorPatient[]> {
         
-    return this.http.get<IDoctorPatient[]>(
-      `${environment.apiUri}/api/DoctorPatient/all/${id}`
-    );;
-  }
+  //   return this.http.get<IDoctorPatient[]>(
+  //     `${environment.apiUri}/api/doctorpatient/all/${id}`
+  //   );;
+  // }
 }

@@ -16,7 +16,7 @@ export class PatientService {
 
   public createPatient(patient: IPatient): Observable<IPatient> {
     return this.http.post<IPatient>(
-      `${environment.apiUri}/api/Patient/add`,
+      `${environment.apiUri}/api/patient/add`,
       patient
     );
   }
@@ -25,7 +25,7 @@ export class PatientService {
     patient: IPatient, doctorId: number
   ): Observable<IPatient> {
     return this.http.post<IPatient>(
-      `${environment.apiUri}/api/Patient/x/${doctorId}`,
+      `${environment.apiUri}/api/patient/add/doctorid/${doctorId}`,
       patient
     );
   }
@@ -33,7 +33,7 @@ export class PatientService {
   public getPatientByDoctorId(id: number): Observable<IPatient[]> {
 
     return this.http.get<IPatient[]>(
-      `${environment.apiUri}/api/Patient/doctor/${id}`
+      `${environment.apiUri}/api/patient/doctor/${id}`
     );;
   }
 }

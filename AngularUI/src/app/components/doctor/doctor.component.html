@@ -65,7 +65,7 @@
 <table class="table table-striped" *ngIf="patientByDoctorId.length">
   <thead>
     <tr>
-      <th scope="col">#</th> <!--INDEX-->
+      <th scope="col">#</th>
       <!-- <th scope="col">Backend ID</th> -->
       <th scope="col">Name</th>
       <th scope="col">Lastname</th>
@@ -79,7 +79,7 @@
       <!-- <td>{{ patient.id}}</td> -->
       <td>{{ patient.name}}</td>
       <td>{{ patient.lastName }}</td>
-      <td>{{ patient.dateOfBirth }}</td>
+      <td>{{ patient.dateOfBirth | date:'longDate' }}</td>
       <td>{{ patient.city }}</td>
     </tr>
   </tbody>

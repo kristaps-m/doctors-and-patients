@@ -1,3 +1,4 @@
+<h3>List of all patients</h3>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -13,7 +14,7 @@
       <th scope="row">{{ i + 1 }}</th>
       <td>{{ patient.name }}</td>
       <td>{{ patient.lastName }}</td>
-      <td>{{ patient.dateOfBirth }}</td>
+      <td>{{ patient.dateOfBirth | date:'longDate'}}</td>
       <td>{{ patient.city }}</td>
     </tr>
   </tbody>

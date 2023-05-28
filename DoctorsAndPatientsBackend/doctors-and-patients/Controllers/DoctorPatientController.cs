@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace doctors_and_patients.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/doctorpatient")]
     [ApiController]
     public class DoctorPatientController : ControllerBase
     {
@@ -28,10 +28,7 @@ namespace doctors_and_patients.Controllers
 		[HttpPut]
 		public IActionResult UpdateDoctorPatient(DoctorPatient doctorPatient, int id)
 		{
-			var doctorPatientToUpdate = _doctorPatientService.GetById(id);
-			doctorPatientToUpdate.DoctorId = doctorPatient.DoctorId;
-			doctorPatientToUpdate.PatientId = doctorPatient.PatientId;
-			_doctorPatientService.Update(doctorPatientToUpdate);
+			var doctorPatientToUpdate = _doctorPatientService.UpdateOneDoctorPatient(doctorPatient, id);
 
 			return Created("", doctorPatientToUpdate);
 		}
@@ -40,8 +37,7 @@ namespace doctors_and_patients.Controllers
 		[HttpDelete]
 		public IActionResult DeleteDoctorPatient(int id)
 		{
-			var doctorPatientToDelete = _doctorPatientService.GetById(id);
-			_doctorPatientService.Delete(doctorPatientToDelete);
+			_doctorPatientService.DeleteOneDoctorPatient(id);
 
 			return Ok($"DoctorPatient with id {id} was deleted!");
 		}
@@ -53,16 +49,6 @@ namespace doctors_and_patients.Controllers
 			var doctorPatients = _doctorPatientService.GetAll();
 
 			return Ok(doctorPatients);
-		}
-
-		[Route("all/{id}")]
-		[HttpGet]
-		public IActionResult GetAllDoctorPatientsByDoctorId(int id)
-		{
-			var houseApartments = _doctorPatientService.GetAll();
-			var specialHouseApartments = houseApartments.Where(x => x.DoctorId == id);
-
-			return Ok(specialHouseApartments);
 		}
 	}
 }
