@@ -4,7 +4,6 @@ import { DoctorComponent } from './components/doctor/doctor.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 
 const routes: Routes = [
-  // { path: ``, redirectTo: '', pathMatch: 'full' },
   { path: ``, component: HomepageComponent },
   { path: `doctor/:id`, component: DoctorComponent },
 ];

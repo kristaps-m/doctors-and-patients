@@ -1,4 +1,3 @@
-<p>all-patients works!</p>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -12,19 +11,10 @@
   <tbody>
     <tr *ngFor="let patient of allPatients; index as i">
       <th scope="row">{{ i + 1 }}</th>
-      <!-- <td><a href="/house/1"></a>{{ house.number | number }}</td> -->
       <td>{{ patient.name }}</td>
       <td>{{ patient.lastName }}</td>
       <td>{{ patient.dateOfBirth }}</td>
       <td>{{ patient.city }}</td>
-
-      <!-- <td><button [routerLink]="['/house',house.id]">Go to home {{house.id}}</button></td> -->
     </tr>
-    <!-- Show loading spinner if isLoading is true -->
-    <!-- <tr *ngIf="isLoading"> 
-      <td colspan="7" class="text-center">
-        <div class="spinner-border text-warning" style="width: 5rem; height: 5rem;" role="status"></div>
-      </td>
-    </tr> -->
   </tbody>
 </table>

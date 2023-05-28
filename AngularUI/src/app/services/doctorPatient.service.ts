@@ -11,10 +11,9 @@ export class DoctorPatientService {
   constructor(private http: HttpClient) {}
 
   public getSpecialDoctorPatientByDoctorId(id: number): Observable<IDoctorPatient[]> {
-    let x = this.http.get<IDoctorPatient[]>(
+        
+    return this.http.get<IDoctorPatient[]>(
       `${environment.apiUri}/api/DoctorPatient/all/${id}`
-    );
-    //console.log(this.test, 'test <-------------');
-    return x;
+    );;
   }
 }

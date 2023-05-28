@@ -1,9 +1,8 @@
-<p>doctor works!</p>
 <table class="table table-striped" *ngIf="oneDoctor | async as doctor">
   <thead>
     <tr>
       <th scope="col">THE DOCTOR</th>
-      <th scope="col">EDIT</th>
+      <th scope="col" class="bg-success">DOCTOR TOOLS</th>
     </tr>
   </thead>
   <tbody>
@@ -35,9 +34,7 @@
           </div>
         </div>
 
-
       </td>
-      <h1>hello :0</h1>
       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
         (click)="initNewPatien()">
         Create new Patient
@@ -56,20 +53,10 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
             </div>
           </div>
         </div>
       </div>
-      <!-- <td>Click 'Edit House' to edit House <b>{{house.id}}</b>
-        <br>
-        <button *ngIf="!showMeEdit" (click)="editHouse(house)" (click)="toggleShowMeEdit()" type="button"
-          class="btn btn-primary">'Edit House'</button>
-        <button *ngIf="showMeEdit" (click)="toggleShowMeEdit()" type="button" class="btn btn-success">Cancel
-          'Edit'</button>
-        <app-edit-house [house]="houseToEdit" (homeUpdated)="updateOneHouse($event)"
-          *ngIf="showMeEdit"></app-edit-house>
-      </td> -->
     </tr>
   </tbody>
 </table>
@@ -79,29 +66,21 @@
   <thead>
     <tr>
       <th scope="col">#</th> <!--INDEX-->
-      <th scope="col">Backend ID</th>
+      <!-- <th scope="col">Backend ID</th> -->
       <th scope="col">Name</th>
       <th scope="col">Lastname</th>
       <th scope="col">Date of birth</th>
       <th scope="col">City</th>
-      <!-- <th scope="col">Full Area</th>
-      <th scope="col">Living Space</th>
-      <th scope="col">Id Of House</th>
-      <th scope="col">Navigation</th> -->
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let patient of patientByDoctorId; index as i">
       <th scope="row">{{ i + 1 }}</th>
-      <td>{{ patient.id}}</td>
+      <!-- <td>{{ patient.id}}</td> -->
       <td>{{ patient.name}}</td>
       <td>{{ patient.lastName }}</td>
       <td>{{ patient.dateOfBirth }}</td>
       <td>{{ patient.city }}</td>
-      <!-- <td>{{ patient.fullArea }}</td>
-      <td>{{ patient.livingSpace }}</td>
-      <td>{{ patient.idOfHouse }}</td> -->
-      <!-- <td><button [routerLink]="['/patient',patient.id]">Go to patient {{patient.id}} page</button></td> -->
     </tr>
   </tbody>
 </table>

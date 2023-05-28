@@ -24,24 +24,6 @@ export class EditPatientComponent {
       if (id){
         this.theDoctorId = +id;
       }
-
-      // if (id) {
-      //   // const doctor = this.DoctorService.getOneDoctor(+id);
-      //   // this.oneDoctor = doctor;
-      //   // this.DoctorPatientService.getSpecialDoctorPatientByDoctorId(
-      //   //   +id
-      //   // ).subscribe(
-      //   //   (result: IDoctorPatient[]) => (this.doctorPatients = result)
-      //   // );
-
-      //   // this.ApartmentDtoService.getApartmentDTOs().subscribe(
-      //   //   (result: IApartmentDTO[]) => (this.apartmentDTOs = result)
-      //   // );
-
-      //   // this.PatientService.getPatientByDoctorId(+id).subscribe(
-      //   //   (result: IPatient[]) => (this.patientByDoctorId = result)
-      //   );
-      // }
     });
   }
 
