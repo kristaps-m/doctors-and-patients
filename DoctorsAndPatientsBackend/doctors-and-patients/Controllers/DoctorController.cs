@@ -46,6 +46,20 @@ namespace doctors_and_patients.Controllers
 			return Ok($"Doctor with id {id} was deleted!");
 		}
 
+        [Route("{id}")]
+        [HttpGet]
+        public IActionResult GetOneDoctor(int id)
+        {
+            var doctor = _doctorService.GetById(id);            
+
+            if (doctor == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(doctor);
+        }
+
 		[Route("all")]
 		[HttpGet]
 		public IActionResult GetAllDoctors()
