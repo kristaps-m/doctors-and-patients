@@ -75,8 +75,7 @@ If you are new to .NET visit [microsoft.com](https://dotnet.microsoft.com/en-us/
 
 9. If you click on 'Create new Patient' then 'New Patient Window' will appear.
 
-- After clicking 'Edit Apartment' Window for edit the apartment will appear. Now you can make changes or even delete it.
-  - To delete a apartment it will ask for confirmation.
+- After clicking 'Create Patient for Doctor {id}' new Patient and new DoctorPatient will be added to the database.
 
 <img src="readme pictures/new patient.png" width="500">
 
