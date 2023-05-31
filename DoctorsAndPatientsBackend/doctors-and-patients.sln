@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "doctors-and-patients.Data",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "doctors-and-patients.Services", "doctors-and-patients.Services\doctors-and-patients.Services.csproj", "{399B5543-543E-49BE-8507-FE34282793B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "doctors-and-patients.ControllerTests", "doctors-and-patients.ControllerTests\doctors-and-patients.ControllerTests.csproj", "{6C1DE423-B0FE-49D1-94D4-EEF57E070461}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "doctors-and-patients.ControllerTests", "doctors-and-patients.ControllerTests\doctors-and-patients.ControllerTests.csproj", "{6C1DE423-B0FE-49D1-94D4-EEF57E070461}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "doctors-and-patients.ServicesTests", "doctors-and-patients.ServicesTests\doctors-and-patients.ServicesTests.csproj", "{0D1874CC-A081-4CF3-8EA6-C059647F5CD3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{6C1DE423-B0FE-49D1-94D4-EEF57E070461}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C1DE423-B0FE-49D1-94D4-EEF57E070461}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C1DE423-B0FE-49D1-94D4-EEF57E070461}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D1874CC-A081-4CF3-8EA6-C059647F5CD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D1874CC-A081-4CF3-8EA6-C059647F5CD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D1874CC-A081-4CF3-8EA6-C059647F5CD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D1874CC-A081-4CF3-8EA6-C059647F5CD3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
