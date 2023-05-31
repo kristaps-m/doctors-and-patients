@@ -63,7 +63,7 @@ If you are new to .NET visit [microsoft.com](https://dotnet.microsoft.com/en-us/
 - Now go to http://localhost:4200 to see homepage.
 
 7. Now you should be able to see homepage. You can see all doctors and all patients or navigate further to one of doctors.
-    - remember to add doctor, patents, and doctor_patent. To see them in front end.
+   - remember to add doctor, patents, and doctor_patent. To see them in front end.
 
 <img src="readme pictures/homepage.png" width="600">
 
@@ -80,8 +80,17 @@ If you are new to .NET visit [microsoft.com](https://dotnet.microsoft.com/en-us/
 
 <img src="readme pictures/new patient.png" width="500">
 
-10. Improvements in future:
+10. If you want to run tests, go back to your Visual Studio. In picture below you can see how to run them.
+
+- more information [https://learn.microsoft.com](https://learn.microsoft.com/en-us/dotnet/core/testing/)
+
+<img src="readme pictures/tests.png" width="500">
+
+11. Improvements in future:
+
 - [ ] add full CRUD frontend functionality.
-- [ ] add tests.
+- [ ] add more tests.
+- [ ] add frontend tests.
+- [ ] add authentication method.
 - [ ] improve Front End UI and visuals.
 - [ ] create Front End using other frameworks.
