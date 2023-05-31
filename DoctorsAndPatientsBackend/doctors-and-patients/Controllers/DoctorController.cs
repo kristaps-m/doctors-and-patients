@@ -46,7 +46,7 @@ namespace doctors_and_patients.Controllers
         [HttpGet]
         public IActionResult GetOneDoctor(int id)
         {
-            var doctor = _doctorService.GetById(id);
+			var doctor = _doctorService.GetById<Doctor>(id);
             if (doctor == null)
             {
                 return NotFound();
@@ -59,7 +59,7 @@ namespace doctors_and_patients.Controllers
 		[HttpGet]
 		public IActionResult GetAllDoctors()
 		{
-			var doctors = _doctorService.GetAll();
+			var doctors = _doctorService.GetAll<Doctor>();
 
 			return Ok(doctors);
 		}

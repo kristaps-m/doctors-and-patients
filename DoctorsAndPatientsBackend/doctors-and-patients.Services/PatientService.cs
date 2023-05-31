@@ -17,7 +17,7 @@ namespace doctors_and_patients.Services
         {
             var doctorPatientIds = new List<int>() { };
 
-            foreach (var doctorPatient in _doctorPatientService.GetAll())
+            foreach (var doctorPatient in _doctorPatientService.GetAll<DoctorPatient>())
             {
                 if (doctorPatient.DoctorId == id)
                 {

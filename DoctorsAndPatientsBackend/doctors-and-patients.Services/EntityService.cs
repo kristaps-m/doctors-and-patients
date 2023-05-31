@@ -4,34 +4,39 @@ using doctors_and_patients.Core.Interfaces;
 
 namespace doctors_and_patients.Services
 {
-    public class EntityService<T> : DbService, IEntityService<T> where T : Entity
+    public class EntityService<T> : IEntityService<T> where T : Entity
     {
-        public EntityService(IDoctorsAndPatientsDbContext context) : base(context)
+        protected IDoctorsAndPatientsDbContext _context;
+        public EntityService(IDoctorsAndPatientsDbContext context)
         {
+            _context = context;
         }
-        public void Create(T entity)
+        public void Create<T>(T entity) where T : Entity
         {
-            Create<T>(entity);
+            _context.Set<T>().Add(entity);
+            _context.SaveChanges();
         }
-        public void Delete(T entity)
+        public void Delete<T>(T entity) where T : Entity
         {
-            Delete<T>(entity);
+            _context.Set<T>().Remove(entity);
+            _context.SaveChanges();
         }
-        public void Update(T entity)
+        public void Update<T>(T entity) where T : Entity
         {
-            Update<T>(entity);
+            _context.Entry(entity).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            _context.SaveChanges();
         }
-        public List<T> GetAll()
+        public List<T> GetAll<T>() where T : Entity
         {
-            return GetAll<T>();
+            return _context.Set<T>().ToList();
         }
-        public T GetById(int id)
+        public T GetById<T>(int id) where T : Entity
         {
-            return GetById<T>(id);
+            return _context.Set<T>().SingleOrDefault(e => e.Id == id);
         }
-        public IQueryable<T> Query()
+        public IQueryable<T> Query<T>() where T : Entity
         {
-            return Query<T>();
+            return _context.Set<T>().AsQueryable();
         }
     }
 }

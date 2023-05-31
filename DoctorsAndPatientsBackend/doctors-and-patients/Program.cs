@@ -16,7 +16,6 @@ builder.Services.AddSwaggerGen();
 var connectionString = builder.Configuration.GetConnectionString("doctors-and-patients");
 builder.Services.AddDbContext<DoctorsAndPatientsDbContext>(x => x.UseSqlServer(connectionString));
 builder.Services.AddScoped<IDoctorsAndPatientsDbContext, DoctorsAndPatientsDbContext>();
-builder.Services.AddScoped<IDbService, DbService>();
 builder.Services.AddScoped<IEntityService<Doctor>, EntityService<Doctor>>();
 builder.Services.AddScoped<IEntityService<Patient>, EntityService<Patient>>();
 builder.Services.AddScoped<IEntityService<DoctorPatient>, EntityService<DoctorPatient>>();

@@ -25,7 +25,7 @@ namespace doctors_and_patients.ServicesTests
                 new DoctorPatient { DoctorId = 2, PatientId = 3 },
             };
 
-            doctorPatientServiceMock.Setup(dps => dps.GetAll()).Returns(doctorPatients);
+            doctorPatientServiceMock.Setup(dps => dps.GetAll<DoctorPatient>()).Returns(doctorPatients);
             contextMock.Setup(c => c.Patients).Returns(GetTestPatientData());
 
             var patientService = new PatientService(contextMock.Object, doctorPatientServiceMock.Object);
