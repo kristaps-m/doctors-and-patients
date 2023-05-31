@@ -11,32 +11,38 @@ namespace doctors_and_patients.Services
         {
             _context = context;
         }
-        public void Create<T>(T entity) where T : Entity
+        public void Create(Entity entity)
         {
-            _context.Set<T>().Add(entity);
+            _context.Set<Entity>().Add(entity);
             _context.SaveChanges();
         }
-        public void Delete<T>(T entity) where T : Entity
+
+        public void Delete(Entity entity)
         {
-            _context.Set<T>().Remove(entity);
+            _context.Set<Entity>().Remove(entity);
             _context.SaveChanges();
         }
-        public void Update<T>(T entity) where T : Entity
+
+        public void Update(Entity entity)
         {
             _context.Entry(entity).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             _context.SaveChanges();
         }
-        public List<T> GetAll<T>() where T : Entity
+
+        public List<T> GetAll()
         {
             return _context.Set<T>().ToList();
         }
-        public T GetById<T>(int id) where T : Entity
+
+        public Entity GetById(int id)
         {
-            return _context.Set<T>().SingleOrDefault(e => e.Id == id);
+            return _context.Set<Entity>().SingleOrDefault(e => e.Id == id);
         }
-        public IQueryable<T> Query<T>() where T : Entity
+
+        public IQueryable<Entity> Query()
         {
-            return _context.Set<T>().AsQueryable();
+            return _context.Set<Entity>().AsQueryable();
         }
+
     }
 }

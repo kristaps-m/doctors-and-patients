@@ -56,7 +56,7 @@ namespace doctors_and_patients.Controllers
 		[HttpGet]
 		public IActionResult GetAllPatients()
 		{
-			var patients = _patientService.GetAll<Patient>();
+			var patients = _patientService.GetAll();
 
 			return Ok(patients);
 		}

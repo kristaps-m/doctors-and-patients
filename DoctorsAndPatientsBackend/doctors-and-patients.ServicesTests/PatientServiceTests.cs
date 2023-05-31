@@ -25,7 +25,7 @@ namespace doctors_and_patients.ServicesTests
                 new DoctorPatient { DoctorId = 2, PatientId = 3 },
             };
 
-            doctorPatientServiceMock.Setup(dps => dps.GetAll<DoctorPatient>()).Returns(doctorPatients);
+            doctorPatientServiceMock.Setup(dps => dps.GetAll()).Returns(doctorPatients);
             contextMock.Setup(c => c.Patients).Returns(GetTestPatientData());
 
             var patientService = new PatientService(contextMock.Object, doctorPatientServiceMock.Object);
@@ -72,8 +72,14 @@ namespace doctors_and_patients.ServicesTests
             contextMock.Setup(c => c.Patients.Add(It.IsAny<Patient>())).Callback<Patient>(p => patients.Add(p));
             contextMock.Setup(c => c.SaveChanges());
 
-            doctorPatientServiceMock.Setup(dps => dps.Create(It.IsAny<DoctorPatient>()))
-                                    .Callback<DoctorPatient>(dp => doctorPatients.Add(dp));
+            doctorPatientServiceMock.Setup(dps => dps.Create(It.IsAny<Entity>()))
+                                    .Callback<Entity>(dp =>
+                                    {
+                                        if (dp is DoctorPatient doctorPatient)
+                                        {
+                                            doctorPatients.Add(doctorPatient);
+                                        }
+                                    });
 
             var patientService = new PatientService(contextMock.Object, doctorPatientServiceMock.Object);
 
@@ -86,6 +92,6 @@ namespace doctors_and_patients.ServicesTests
             Assert.AreEqual(patient.Id, doctorPatients[0].PatientId);
             Assert.AreEqual(doctorId, doctorPatients[0].DoctorId);
             Assert.AreEqual(patient, result);
-        } 
+        }
     }
 }
