@@ -2,7 +2,7 @@
 {
     public interface IEntityService<T> where T : Entity
     {
-        void Create(Entity entity);
+        void Create(T entity);
         void Delete(Entity entity);
         void Update(Entity entity);
         List<T> GetAll();

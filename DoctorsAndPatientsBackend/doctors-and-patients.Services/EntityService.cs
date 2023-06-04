@@ -11,9 +11,9 @@ namespace doctors_and_patients.Services
         {
             _context = context;
         }
-        public void Create(Entity entity)
+        public void Create(T entity)
         {
-            _context.Set<Entity>().Add(entity);
+            _context.Set<T>().Add(entity);
             _context.SaveChanges();
         }
 
@@ -36,7 +36,7 @@ namespace doctors_and_patients.Services
 
         public Entity GetById(int id)
         {
-            return _context.Set<Entity>().SingleOrDefault(e => e.Id == id);
+            return _context.Set<T>().SingleOrDefault(e => e.Id == id);
         }
 
         public IQueryable<Entity> Query()

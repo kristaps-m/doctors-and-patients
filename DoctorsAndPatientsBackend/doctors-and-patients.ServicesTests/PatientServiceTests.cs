@@ -72,14 +72,8 @@ namespace doctors_and_patients.ServicesTests
             contextMock.Setup(c => c.Patients.Add(It.IsAny<Patient>())).Callback<Patient>(p => patients.Add(p));
             contextMock.Setup(c => c.SaveChanges());
 
-            doctorPatientServiceMock.Setup(dps => dps.Create(It.IsAny<Entity>()))
-                                    .Callback<Entity>(dp =>
-                                    {
-                                        if (dp is DoctorPatient doctorPatient)
-                                        {
-                                            doctorPatients.Add(doctorPatient);
-                                        }
-                                    });
+            doctorPatientServiceMock.Setup(dps => dps.Create(It.IsAny<DoctorPatient>()))
+                                    .Callback<DoctorPatient>(dp => doctorPatients.Add(dp));
 
             var patientService = new PatientService(contextMock.Object, doctorPatientServiceMock.Object);
 
