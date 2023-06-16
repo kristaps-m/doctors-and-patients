@@ -10,7 +10,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let patient of allPatients; index as i">
+    <tr *ngFor="let patient of allPatients; index as i" class="hover-row">
       <th scope="row">{{ i + 1 }}</th>
       <td>{{ patient.name }}</td>
       <td>{{ patient.lastName }}</td>

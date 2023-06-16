@@ -74,7 +74,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let patient of patientByDoctorId; index as i">
+    <tr *ngFor="let patient of patientByDoctorId; index as i" class="hover-row">
       <th scope="row">{{ i + 1 }}</th>
       <!-- <td>{{ patient.id}}</td> -->
       <td>{{ patient.name}}</td>

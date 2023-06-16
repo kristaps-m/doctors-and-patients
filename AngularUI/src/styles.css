@@ -18,3 +18,17 @@
   font-family: "Courgette";
   src: url("assets/fonts/Courgette/Courgette-Regular.ttf");
 }
+
+.hover-row:hover {
+  background-color: #f0ae58;
+  /* Set the background color on hover */
+  cursor: pointer;
+  /* Change the cursor to a pointer on hover */
+}
+
+.hover-button:hover {
+  background-color: #6af058;
+  /* Set the background color on hover */
+  cursor: pointer;
+  /* Change the cursor to a pointer on hover */
+}

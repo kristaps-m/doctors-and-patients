@@ -10,12 +10,12 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let doctor of allDoctors; index as i">
+    <tr *ngFor="let doctor of allDoctors; index as i" class="hover-row">
       <th scope="row">{{ i + 1 }}</th>
       <!-- <td>{{ doctor.id }}</td> -->
       <td>{{ doctor.name }}</td>
       <td>{{ doctor.lastName }}</td>
-      <td><button [routerLink]="['/doctor',doctor.id]">{{doctor.name}}</button></td>
+      <td><button [routerLink]="['/doctor',doctor.id]" class="hover-button">{{doctor.name}}</button></td>
     </tr>
   </tbody>
 </table>
