@@ -86,7 +86,7 @@ If you are new to .NET visit [microsoft.com](https://dotnet.microsoft.com/en-us/
   - You can also use Postman. More info [here:](https://www.postman.com/)
 - more information [learn.microsoft.com](https://learn.microsoft.com/en-us/ef/core/cli/powershell)
 
-11. Improvements in future:
+### Improvements in future:
 
 - [ ] add full CRUD frontend functionality.
 - [ ] add more tests.
